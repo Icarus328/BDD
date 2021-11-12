@@ -1,8 +1,10 @@
 <?php include('templates/header.html');   ?>
 
-
-
 <body>
+<html>
+  <form method="POST" action="profile.php">
+    <input type="submit" value="Ver Perfil"/>
+  </form>
   <h1 align="center">Prime max </h1>
   <p style="text-align:center;">Aquí podrás encontrar consultas sobre tus plataformas favoritas (o no)</p>
 
