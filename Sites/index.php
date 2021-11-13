@@ -13,6 +13,10 @@
     <input type="submit" value="Ver Perfil"/>
   </form>
 
+  <form method="POST" action="register.php">
+    <input type="submit" value="Registrarse"/>
+  </form>
+
   <h1 align="center">Prime Max </h1>
   <h2 style="text-align:center;">Aquí podrás encontrar consultas sobre tus plataformas favoritas (o no) </h2>
 
