@@ -13,7 +13,7 @@
     <input type="submit" value="Ver Perfil"/>
   </form>
 
-  <h1 align="center">Prime max </h1>
+  <h1 align="center">Prime Max </h1>
   <h2 style="text-align:center;">Aquí podrás encontrar consultas sobre tus plataformas favoritas (o no) </h2>
 
   <br>
