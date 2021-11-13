@@ -5,11 +5,13 @@ body {
     font-size: 20px;
     text-align: center;
     font-family: 'Bodoni MT';
+    background-color: #cbe3ff;
 }
 
 /* Titulos h1*/
 h1 {
-    color: #1b7fd1;
+    color: #1b5bd1;
+    text-shadow: 2px 2px #161616;
 }
 
 
@@ -69,6 +71,6 @@ input[ type=submit ], input[ type=button ] {
     font-size: 30px;
     font-family: 'Bodoni MT';
     background-color: #d0e6ff;
-    box-shadow: 5px 5px 13px #999;
+    box-shadow: 5px 5px 13px rgb(48, 48, 48);
     border-radius: 10px;
 }

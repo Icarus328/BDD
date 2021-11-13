@@ -1,6 +1,6 @@
 <head>
-  <link href="styles/estilos.css" rel="stylesheet">
-  <?php include('templates/header.html');   ?>
+	<link href="../styles/estilos.css" rel="stylesheet">
+	<?php include('../templates/header.html');?>
 </head>
 
 <body>
