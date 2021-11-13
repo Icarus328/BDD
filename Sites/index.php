@@ -1,18 +1,25 @@
-<?php include('templates/header.html');   ?>
+<html>
+  
+<head>
+  <link href="styles/estilos.css" rel="stylesheet">
+  <?php include('templates/header.html');   ?>
+</head>
+
 
 <body>
-<html>
+
+
   <form method="POST" action="profile.php">
     <input type="submit" value="Ver Perfil"/>
   </form>
+
   <h1 align="center">Prime max </h1>
-  <p style="text-align:center;">Aquí podrás encontrar consultas sobre tus plataformas favoritas (o no)</p>
+  <h2 style="text-align:center;">Aquí podrás encontrar consultas sobre tus plataformas favoritas (o no) </h2>
 
   <br>
 
   <h3 align="center"> Estas son todas las peliculas gratis junto con sus proveedores!</h3>
   <form align="center" action="consultas/consulta_1.php" method="post">
-  <br/><br/>   
   <input type="submit" value="Mostrar!">
  </form>
   <br>
@@ -23,8 +30,7 @@
 
   <form align="center" action="consultas/consulta_2.php" method="post">
     <input type="text" name="n_temporadas">
-    <h3 align="center"> temporadas o más </h3>
-    <br/><br/>
+    <h3> temporadas o más </h3>
     <input type="submit" value="Mostrar!">
   </form>
   
@@ -37,7 +43,6 @@
   <form align="center" action="consultas/consulta_3.php" method="post">
     <input type="text" name="str">
     <h3 align="center"> en el nombre y los proveedores que lo ofrecen</h3>
-    <br/><br/>
     <input type="submit" value="Mostrar!">
   </form>
   <br>
@@ -64,7 +69,6 @@
       ?>
     </select>
   <h3 align="center"> o a alguno de sus subgeneros</h3>
-    <br><br>
     <input type="submit" value="Mostrar!">
   </form>
 
@@ -72,7 +76,7 @@
   <br>
   <br>
 
-  <h3 align="center">Muestrame todas las peliculas disponibles para mi Dccompañero cuyo username es</h3>
+  <h3 align="center">Muestrame todas las peliculas disponibles para mi DCCompañero cuyo username es</h3>
 
   <form align="center" action="consultas/consulta_5.php" method="post">
     <input type="text" name="username">
@@ -83,11 +87,10 @@
   <br>
   <br>
 
-  <h3 align="center">En el ultimo año, mi Dccompañero de username</h3>
+  <h3 align="center">En el ultimo año, mi DCCompañero de username</h3>
 
 <form align="center" action="consultas/consulta_6.php" method="post">
   <input type="text" name="username">
-  <br/><br/>
   <h3 align="center">ha visto más de un capitulo de las series a continuación listadas en ningún orden en especifico</h3>
   <input type="submit" value="Mostrar!">
 </form>
@@ -96,8 +99,7 @@
 <br>
 
 <h3 align="center"> Muestrame la cantidad de numerario que cada Dccompañero ha malgastado en peliculas que no se veian incluidas de forma gratuita en sus planes de subscripcion</h3>
-<form align="center" action="consultas/consulta_7.php" method="post">
-  <br/><br/>   
+<form align="center" action="consultas/consulta_7.php" method="post">  
   <input type="submit" value="Mostrar!">
 </form>
   <br>

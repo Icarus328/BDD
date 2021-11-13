@@ -1,0 +1,74 @@
+
+/* Modificacion del cuerpo entero de los html*/
+body {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Bodoni MT';
+}
+
+/* Titulos h1*/
+h1 {
+    color: #1b7fd1;
+}
+
+
+/* Modificacion de tablas*/
+table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    text-align: center;
+    width: 40%;
+}
+
+
+/* Titulos de tablas*/
+th {
+    background-color: #1b7fd1;
+    color: white;
+    height: 50px;
+    font-size: 25px;
+}
+
+/* Filas de tablas*/
+tr {
+    background-color: #83bdff;
+    color: black;
+}
+
+/* Filas de tablas pares "even", cambian de color */
+tr:nth-child(even) {
+    background-color: #83bdff6b;
+}
+
+
+/* Elementos de input*/
+input[ type=text ] {
+    width: 15%;
+    height: 30px;
+    font-size: 15px;
+    font-family: 'Bodoni MT';
+    background-color: #d0e6ff;
+    border-radius: 10px;
+}
+
+select {
+    width: 15%;
+    height: 30px;
+    font-size: 15px;
+    font-family: 'Bodoni MT';
+    background-color: #d0e6ff;
+    border-radius: 10px;
+}
+
+/* Boton de input*/
+input[ type=submit ], input[ type=button ] {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    font-family: 'Bodoni MT';
+    background-color: #d0e6ff;
+    box-shadow: 5px 5px 13px #999;
+    border-radius: 10px;
+}
