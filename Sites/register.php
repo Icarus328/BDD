@@ -30,9 +30,6 @@
 		<div class="form-group">
       <input type="text" name="pass" placeholder="Password" required="required">
     </div>
-		<div class="form-group">
-      <input type="text" name="cpass" placeholder="Confirm Password" required="required">
-    </div>
     <br>
 		<div class="form-group">
       <input type="submit" name="save" value="Registrarse"></input>
