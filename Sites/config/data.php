@@ -6,7 +6,7 @@
   $host_impar = 'codd.ing.puc.cl';
 
   $user_par = 'grupo112';
-  $password_par = '1234bdd';
+  $password_par = '1234';
   $databaseName_par = 'grupo112e3';
   $port_par = '5432';
   $host_par = 'codd.ing.puc.cl';
