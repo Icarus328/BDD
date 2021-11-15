@@ -17,6 +17,10 @@
     $peliculas = $result -> fetchAll();
   ?>
 
+<h1> One Time Purchases: </h1>
+<h3> Mostrando todas las peliculas y los proveedores que las ofrecen. </h2>
+
+
   <table>
     <tr>
       <th>Titulo</th>
