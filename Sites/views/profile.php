@@ -1,4 +1,4 @@
-<?php include('templates/profile.html');   ?>
+<?php include('../templates/profile.html');   ?>
 
 
 <body>
@@ -17,6 +17,6 @@
 
   <br>
 
-  <form method="POST" action="index.php">
+  <form method="POST" action="../index.php">
     <input type="submit" value="Volver"/>
   </form>

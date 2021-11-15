@@ -1,6 +1,6 @@
 <?php
 extract($_POST);
-require("config/conexion.php");
+require("../config/conexion.php");
 $first_name = $_POST["first_name"];
 $last_name = $_POST["last_name"];
 $username = $_POST["username"];

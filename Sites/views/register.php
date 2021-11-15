@@ -2,13 +2,13 @@
 
 <head>
   <link href="styles/estilos.css" rel="stylesheet">
-  <?php include('templates/header.html');   ?>
+  <?php include('../templates/header.html');   ?>
 </head>
 
 
 <body>
 <div class="signup-form">
-  <form action="register_controller.php" method="post">
+  <form action="../controllers/register_controller.php" method="post">
 		<h2>Registrandose</h2>
 		<p>Crea tu cuenta</p>
     <div class="form-group">
@@ -43,7 +43,7 @@
 </div>
 
 
-  <form method="POST" action="index.php">
+  <form method="POST" action="../index.php">
     <input type="submit" value="Volver"/>
   </form>
 
