@@ -3,7 +3,9 @@
 <head>
   <link href="styles/estilos.css" rel="stylesheet">
   <?php include('templates/header.html');   ?>
+</head>
 
+<body>
   <form method="POST" action="views/register.php">
     <input type="submit" value="Registrarse"/>
   </form>
@@ -20,6 +22,9 @@
     <input type="submit" value="Ver migraciones"/>
   </form>
 
-</head>
+</body>
+
+
+
 
 
