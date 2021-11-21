@@ -42,6 +42,31 @@
     <br>
     <br>
 
+
+    <?php
+        require("../config/conexion.php");
+        $query = "SELECT DISTINCT proveedores.nombre
+        FROM codigos_pagos AS cdp, videojuegos, proveedores
+        WHERE cdp.id_proveedor = proveedores.id
+        AND cdp.id_videojuego = videojuegos.id
+        AND videojuegos.titulo = '$titulo' 
+        ORDER BY proveedores.nombre"; 
+
+        $result = $db_par -> prepare($query);
+        $result -> execute();
+        $proveedores = $result -> fetchAll();
+    ?>
+
+    <form action= 'consulta_compra.php' method='post'>
+            Seleccione el proveedor al que desea comprar:
+        <select name=tipo>
+            <?php foreach ($proveedores as $proveedor) {
+                echo "<option value=$proveedor[0]>$proveedor[0]</option>";
+            }
+            ?>
+
+            <input type="submit" value="Comprar a este proveedor">
+    </form>       
     <form>
         <input type="button" value="Atras" onclick="history.back()">
     </form>
