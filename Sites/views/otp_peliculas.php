@@ -8,7 +8,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     require("../config/conexion.php");
 
-    $query = "SELECT DISTINCT titulo, duracion, clasificacion, puntuacion, año, genero, nombre, costo
+    $query = "SELECT DISTINCT titulo
               FROM peliculas, proveedores, prov_pel
               WHERE prov_pel.pid=peliculas.pid
               AND prov_pel.pro_id=proveedores.id;";
@@ -21,26 +21,26 @@
 <h3> Mostrando todas las peliculas y los proveedores que las ofrecen. </h2>
 
 
-  <table>
+<table>
     <tr>
       <th>Titulo</th>
-      <th>Duracion</th>
-      <th>Clasificacion</th>
-      <th>Puntuacion</th>
-      <th>Año</th>
-      <th>Genero</th>
-      <th>Proveedor</th>
-      <th>Costo</th>
+      <th>Links</th>
     </tr>
-  
-      <?php
-        // echo $peliculas_gratis;
-        foreach ($peliculas as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td></tr>";
+    <?php
+      foreach ($peliculas as $pelicula) {
+        $title = str_replace("'","@", $pelicula[0]);
+        echo "<tr>
+        <td>$pelicula[0]</td>
+        <td>
+          <form action='../consultas/consulta_peliculas.php' method='post'>
+            <input type='hidden' name='title' value='$title' >
+            <input type='submit' value='Más detalles' >
+          </form>
+        </td>
+        </tr>";
       }
-      ?>
-      
-  </table>
+    ?>
+	</table>
 
   <?php include('../templates/footer.html'); ?>
 </body>

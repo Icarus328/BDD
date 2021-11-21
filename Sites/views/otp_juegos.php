@@ -7,7 +7,7 @@
 
     <?php
         require('../config/conexion.php');
-        $query = "SELECT DISTINCT videojuegos.titulo, videojuegos.fecha_de_lanzamiento, videojuegos.puntuacion, videojuegos.clasificacion, proveedores.nombre, cdp.tipo_venta, cdp.precio
+        $query = "SELECT DISTINCT videojuegos.titulo
         FROM codigos_pagos AS cdp, videojuegos, proveedores
         WHERE cdp.id_proveedor = proveedores.id
         AND cdp.id_videojuego = videojuegos.id
@@ -24,16 +24,20 @@
   <table>
     <tr>
       <th>Nombre</th>
-      <th>Fecha de Lanzamiento</th>
-      <th>Puntuación</th>
-      <th>Clasificación</th>
-      <th>Proveedor</th>
-      <th>Tipo de venta</th>
-      <th>Precio</th>
+      <th>Links</th>
     </tr>
     <?php
       foreach ($juegos as $juego) {
-        echo "<tr><td>$juego[0]</td><td>$juego[1]</td><td>$juego[2]</td><td>$juego[3]</td><td>$juego[4]</td><td>$juego[5]</td><td>$juego[6]</td></tr>";
+        $title = str_replace("'","@", $juego[0]);
+        echo "<tr>
+        <td>$juego[0]</td>
+        <td>
+          <form action='../consultas/consulta_juegos.php' method='post'>
+            <input type='hidden' name='juego' value='$title' >
+            <input type='submit' value='Más detalles' >
+          </form>
+        </td>
+        </tr>";
       }
     ?>
 	</table>
