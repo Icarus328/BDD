@@ -10,6 +10,10 @@
     <input type="submit" value="Registrarse"/>
   </form>
 
+  <form method="POST" action="views/register.php">
+    <input type="submit" value="Iniciar Sesión"/>
+  </form>
+
   <form method="POST" action="views/profile.php">
     <input type="submit" value="Ver Perfil"/>
   </form>

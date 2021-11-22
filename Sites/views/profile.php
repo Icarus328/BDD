@@ -1,4 +1,8 @@
-<?php include('../templates/profile.html');   ?>
+<?php include('../templates/profile.html');
+session_start();
+$_SESSION["username"] = 'Pedro';   ?>
+
+
 
 <head>
   <link href="../styles/estilos.css" rel="stylesheet">
@@ -9,7 +13,7 @@
 <html>
   <h1 align="center">Perfil de Usuario </h1>
   <h3> Nombre de usuario: </h3>
-  <h4 style="color:blue"> nombre </h4>
+  <h4 style="color:blue"> <?php $user_name; ?> </h4>
   <h3> Correo </h3>
   <h4 style="color:blue"> correo </h4>
   <h3> Cantidad de Peliculas Vistas</h3>
