@@ -6,13 +6,12 @@
     
     <?php
         require("../config/conexion.php");
-        $titulo = $_POST["title"];
-        $titulo = str_replace("@","''", $titulo);
+        $id_pelicula = $_POST["pelicula"];
         $query = "SELECT DISTINCT titulo, duracion, clasificacion, puntuacion, año, nombre, costo
         FROM peliculas, proveedores, prov_pel
         WHERE prov_pel.pid=peliculas.pid
         AND prov_pel.pro_id=proveedores.id
-        AND peliculas.titulo = '$titulo';";
+        AND peliculas.pid = '$id_pelicula';";
         $result = $db_impar -> prepare($query);
         $result -> execute();
         $peliculas = $result -> fetchAll();
@@ -45,27 +44,28 @@
 
     <?php
         require("../config/conexion.php");
-        $titulo = $_POST["title"];
-        $titulo = str_replace("@","''", $titulo);
-        $query = "SELECT DISTINCT nombre
+        $query = "SELECT DISTINCT proveedores.nombre, proveedores.id
         FROM peliculas, proveedores, prov_pel
-        WHERE prov_pel.pid=peliculas.pid
-        AND prov_pel.pro_id=proveedores.id
-        AND peliculas.titulo = '$titulo';";
+        WHERE prov_pel.pid = peliculas.pid
+        AND prov_pel.pro_id = proveedores.id
+        AND peliculas.pid = '$id_pelicula'";
         $result = $db_impar -> prepare($query);
         $result -> execute();
         $proveedores = $result -> fetchAll();
         ?>
   
-    <form action= 'consulta_compra.php' method='post'>
+    <form action= 'consulta_compra_peliculas.php' method='post'>
             Seleccione el proveedor al que desea comprar:
-        <select name=tipo>
+        <select name='id_proveedor'>
             <?php foreach ($proveedores as $proveedor) {
-                echo "<option value=$proveedor[0]>$proveedor[0]</option>";
+                echo "<option value='$proveedor[1]'>$proveedor[0]</option>";
             }
             ?>
-
-            <input type="submit" value="Comprar a este proveedor">
+        </select>
+        <?php
+        echo "<input type='hidden' name='id_pelicula' value='$id_pelicula' required='required'>"
+        ?>
+        <input type="submit" value="Comprar a este proveedor">
     </form>   
 
     <form>
