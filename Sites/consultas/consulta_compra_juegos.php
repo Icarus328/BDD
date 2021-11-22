@@ -25,8 +25,20 @@
 
 
     <?php
+        require("../config/conexion.php");
+        $query = "SELECT cdp.id, CURRENT_TIMESTAMP
+        FROM videojuegos, codigos_pagos AS cdp
+        WHERE cdp.id_videojuego = videojuegos.id
+        AND cdp.id_proveedor = '$id_proveedor'
+        AND videojuegos.id = '$id_juego';";
+        $result = $db_par -> prepare($query);
+        $result -> execute();
+        $codigo = $result -> fetch();
+
         if (count($juego_comprado)==0){
-            echo "Compraremos este juego";
+            $query="INSERT INTO pagos(id_usuario, id_codigo, fecha )
+            VALUES ($id_usuario, $codigo[0], $codigo[1])";
+            echo $query;
         } else {
             echo "El juego ya lo has comprado";
         };

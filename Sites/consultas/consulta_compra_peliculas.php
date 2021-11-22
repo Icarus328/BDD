@@ -24,8 +24,18 @@
 
 
     <?php
+
+        $query = "SELECT DISTINCT CURRENT_TIMESTAMP, peliculas.pid
+        FROM peliculas
+        WHERE peliculas.pid = '$id_pelicula' ";
+        $result = $db_impar -> prepare($query);
+        $result -> execute();
+        $codigo = $result -> fetch();
+
         if (count($pelicula_comprada)==0){
-            echo "Compraremos esta pelicula";
+            $query = "INSERT INTO pagos_pel(fecha, uid, pid, pro_id)
+            VALUES ($codigo[0], $id_usuario, $codigo[1], $id_proveedor)";
+            echo $query;
         } else {
             echo "La pelicula ya la has comprado";
         };
