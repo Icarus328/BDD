@@ -6,14 +6,13 @@
     
     <?php
         require("../config/conexion.php");
-        $titulo = $_POST["juego"];
-        $titulo = str_replace("@","''", $titulo);
+        $id_juego = $_POST["juego"];
         $query = "SELECT DISTINCT videojuegos.titulo, videojuegos.fecha_de_lanzamiento, videojuegos.puntuacion, videojuegos.clasificacion, proveedores.nombre, cdp.tipo_venta, cdp.precio
         FROM codigos_pagos AS cdp, videojuegos, proveedores
         WHERE cdp.id_proveedor = proveedores.id
         AND cdp.id_videojuego = videojuegos.id
-        AND videojuegos.titulo = '$titulo' 
-        ORDER BY videojuegos.titulo, proveedores.nombre"; 
+        AND videojuegos.id = '$id_juego' 
+        ORDER BY proveedores.nombre;"; 
 
         $result = $db_par -> prepare($query);
         $result -> execute();
@@ -42,6 +41,35 @@
     <br>
     <br>
 
+
+    <?php
+        require("../config/conexion.php");
+        $query = "SELECT DISTINCT proveedores.nombre, proveedores.id
+        FROM codigos_pagos AS cdp, videojuegos, proveedores
+        WHERE cdp.id_proveedor = proveedores.id
+        AND cdp.id_videojuego = videojuegos.id
+        AND videojuegos.id = '$id_juego'
+        ORDER BY proveedores.nombre;"; 
+        $result = $db_par -> prepare($query);
+        $result -> execute();
+        $proveedores = $result -> fetchAll();
+    ?>
+
+    
+    <form action= 'consulta_compra_juegos.php' method='post'>
+            Seleccione el proveedor al que desea comprar:
+        <select name='id_proveedor' >
+            <?php foreach ($proveedores as $proveedor) {
+                echo "<option value='$proveedor[1]'>$proveedor[0]</option>";
+            }
+            ?>
+        </select>
+        <?php
+        echo "<input type='hidden' name='id_juego' value='$id_juego' required='required'>"
+        ?>
+        <input type="submit" value="Comprar a este proveedor">
+    </form>  
+        
     <form>
         <input type="button" value="Atras" onclick="history.back()">
     </form>

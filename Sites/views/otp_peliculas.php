@@ -8,7 +8,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     require("../config/conexion.php");
 
-    $query = "SELECT DISTINCT titulo
+    $query = "SELECT DISTINCT peliculas.titulo, peliculas.pid
               FROM peliculas, proveedores, prov_pel
               WHERE prov_pel.pid=peliculas.pid
               AND prov_pel.pro_id=proveedores.id;";
@@ -28,12 +28,11 @@
     </tr>
     <?php
       foreach ($peliculas as $pelicula) {
-        $title = str_replace("'","@", $pelicula[0]);
         echo "<tr>
         <td>$pelicula[0]</td>
         <td>
           <form action='../consultas/consulta_peliculas.php' method='post'>
-            <input type='hidden' name='title' value='$title' >
+            <input type='hidden' name='pelicula' value='$pelicula[1]' >
             <input type='submit' value='Más detalles' >
           </form>
         </td>

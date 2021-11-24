@@ -7,7 +7,7 @@
 
     <?php
         require('../config/conexion.php');
-        $query = "SELECT DISTINCT videojuegos.titulo
+        $query = "SELECT DISTINCT videojuegos.titulo, videojuegos.id
         FROM codigos_pagos AS cdp, videojuegos, proveedores
         WHERE cdp.id_proveedor = proveedores.id
         AND cdp.id_videojuego = videojuegos.id
@@ -28,12 +28,11 @@
     </tr>
     <?php
       foreach ($juegos as $juego) {
-        $title = str_replace("'","@", $juego[0]);
         echo "<tr>
         <td>$juego[0]</td>
         <td>
           <form action='../consultas/consulta_juegos.php' method='post'>
-            <input type='hidden' name='juego' value='$title' >
+            <input type='hidden' name='juego' value='$juego[1]' >
             <input type='submit' value='Más detalles' >
           </form>
         </td>
