@@ -106,13 +106,4 @@ foreach ($users as $user) {
   }
   ?>
 
-<form method="POST" action="../migraciones/pagos.php">
-    <input type="submit" value="Migrar pagos"/>
-  </form>
-
-<form method="POST" action="../migraciones/usuarios.php">
-  <input type="submit" value="Migrar usuarios"/>
-</form>
-
-
 </html>
