@@ -29,7 +29,7 @@ table {
 
 /* Titulos de tablas*/
 th {
-    background-color: #1b7fd1;
+    background-color: #000000;
     color: white;
     height: 50px;
     font-size: 25px;
@@ -37,13 +37,14 @@ th {
 
 /* Filas de tablas*/
 tr {
-    background-color: #83bdff;
-    color: black;
+    background-color: #252525;
+    color: white;
 }
 
 /* Filas de tablas pares "even", cambian de color */
 tr:nth-child(even) {
-    background-color: #83bdff6b;
+    background-color: #414141;
+    color: white;
 }
 
 .banner {

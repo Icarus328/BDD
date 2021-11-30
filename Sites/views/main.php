@@ -1,3 +1,8 @@
+<?php 
+  session_start();
+  $user_logged = $_SESSION['user_logged'];
+?>
+
 <html>
 
 <head>
@@ -13,12 +18,18 @@
 <section>
   <nav class="navbar navbar-expand-lg navbar-dark bg-black navbar-shrink">
     <div class="container-fluid">
-      <a class="navbar-brand text-warning text-uppercase" href="../index.php">Prime Max</a>
+      <a class="navbar-brand text-warning text-uppercase" href="../index.php#page-top">Prime Max</a>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="../index.php#ingresar">Ingresar</a>
-          </li>
+          <?php
+            if ($user_logged[0]){
+              echo "<li class='nav-item'> <a class='nav-link active' href='profile.php'> $user_logged[0] </a> </li>";
+              echo "<li class='nav-item'> <a class='nav-link active' href='login.php'> Cerrar Sesión </a> </li>";
+            } else {
+              echo "<li class='nav-item'> <a class='nav-link active' href='../index.php#ingresar'> Ingresar </a> </li>";
+            };
+          ?>
           <li class="nav-item">
             <a class="nav-link" href="../index.php#about">Acerca de nosotros</a>
           </li>
