@@ -1,5 +1,9 @@
+<head>
+</head>
+
+<body>
+
 <?php
-session_start();
 extract($_POST);
 require("../config/conexion.php");
 $first_name = $_POST["first_name"];
@@ -22,9 +26,7 @@ if($usuarios_registrados != array()) {
 } else {
     $query="INSERT INTO usuarios(nombre, mail, password, username )
             VALUES ('$name', '$email', '$pass', '$username')";
-    $result = $db_impar -> prepare($query);
-    $result -> execute();
-    header('Location: ../views/login.php');
+    echo $query;
 }
 
 ?>

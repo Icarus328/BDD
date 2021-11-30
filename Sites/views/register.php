@@ -1,5 +1,9 @@
-<html>
+<?php
+  session_start();
+  $_SESSION['user_logged'] = FALSE;
+?>
 
+<html>
 <head>
   <link href="../styles/estilos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -41,7 +45,7 @@
 </section>
 
 <section class="text-center" style="height: 45%; padding-left: 10%; padding-right: 10%">
-  <form action="../controllers/login_controller.php" method="post">
+  <form action="../controllers/register_controller.php" method="post">
     <div class="input-group mb-3" >
       <input type="text" name="first_name" class="form-control" placeholder="First Name" required="required">
     </div>

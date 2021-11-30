@@ -1,7 +1,9 @@
+<?php 
+  session_start();
+  $user_logged = $_SESSION['user_logged'];
+?>
+
 <html>
-
-<?php include('../templates/profile.html');   ?>
-
 <head>
   <link href="../styles/estilos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -34,14 +36,14 @@
 
 <section class="text-center">
   <div class="my-5">
-    <h1 class="my-4 text-warning display-3">Perfil de Usuario </h1>
+    <h1 class="my-4 text-warning display-3">Perfil de <?php echo " $user_logged[0] "?> </h1>
   </div>
 
   </div>
     <h3 class="text-warning"> Nombre de usuario </h3>
-    <h4 > nombre </h4>
+    <h4 > <?php echo " $user_logged[2] "?> </h4>
     <h3 class="text-warning"> Correo </h3>
-    <h4 > correo </h4>
+    <h4 > <?php echo " $user_logged[1] "?> </h4>
     <h3 class="text-warning"> Cantidad de Peliculas Vistas</h3>
     <h4 > n_peliculas </h4>
     <h3 class="text-warning"> Cantidad de Capitulos Vistos</h3>
