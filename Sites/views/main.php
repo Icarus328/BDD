@@ -16,6 +16,15 @@
     <input type="submit" value="Peliculas"/>
   </form>
 
+  <h1> Buscar amigos </h1>
+  <h3 align="center">buscar amigos</h3>
+
+  <form align="center" action="consultas/consulta_user.php" method="post">
+    <input type="text" name="username">
+    <br/><br/>   
+    <input type="submit" value="buscar!">
+  </form>
+
   <?php include('../templates/footer.html'); ?>
 </body>
 </html>
