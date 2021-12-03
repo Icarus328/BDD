@@ -5,13 +5,15 @@ body {
     font-size: 20px;
     text-align: center;
     font-family: 'Bodoni MT';
-    background-color: #cbe3ff;
 }
 
 /* Titulos h1*/
 h1 {
-    color: #1b5bd1;
-    text-shadow: 2px 2px 4px #8a8a8a;
+    text-shadow: 5px 5px 5px #222222;
+}
+
+h2 {
+    text-shadow: 5px 5px 5px #222222;
 }
 
 
@@ -27,7 +29,7 @@ table {
 
 /* Titulos de tablas*/
 th {
-    background-color: #1b7fd1;
+    background-color: #000000;
     color: white;
     height: 50px;
     font-size: 25px;
@@ -35,42 +37,20 @@ th {
 
 /* Filas de tablas*/
 tr {
-    background-color: #83bdff;
-    color: black;
+    background-color: #252525;
+    color: white;
 }
 
 /* Filas de tablas pares "even", cambian de color */
 tr:nth-child(even) {
-    background-color: #83bdff6b;
+    background-color: #414141;
+    color: white;
 }
 
-
-/* Elementos de input*/
-input[ type=text ] {
-    width: 15%;
-    height: 30px;
-    font-size: 15px;
-    font-family: 'Bodoni MT';
-    background-color: #d0e6ff;
-    border-radius: 10px;
+.banner {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgb(17 45 8 / 35%)),
+        url("https://leaderboardarcade.com/wp-content/uploads/2019/11/arcade-2-optimized.jpg");
+    background-position: 0% 10%;
 }
 
-select {
-    width: 15%;
-    height: 30px;
-    font-size: 15px;
-    font-family: 'Bodoni MT';
-    background-color: #d0e6ff;
-    border-radius: 10px;
-}
-
-/* Boton de input*/
-input[ type=submit ], input[ type=button ] {
-    width: 200px;
-    height: 50px;
-    font-size: 30px;
-    font-family: 'Bodoni MT';
-    background-color: #d0e6ff;
-    box-shadow: 5px 5px 13px rgb(48, 48, 48);
-    border-radius: 10px;
-}
